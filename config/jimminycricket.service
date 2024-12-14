@@ -3,9 +3,8 @@ Description=JimminyCricket App Server
 After=network.target
 
 [Service]
-ExecStart=/srv/jimminycricket/venv/bin/gunicorn app:app -w 4 -b 127.0.0.1:8000 --env DBHost=jimminycricket-stg-db.ct4qsm2walem.ap-southeast-1.rds.amazonaws.com
-WorkingDirectory=/srv/jimminycricket/
-EnvironmentFile=/srv/jimminycricket/env
+ExecStart=/srv/jimminycricket2/venv/bin/gunicorn app:app -w 4 -b 127.0.0.1:8000
+WorkingDirectory=/srv/jimminycricket2/
 Restart=on-failure
 User=gunicorn
 Group=gunicorn
