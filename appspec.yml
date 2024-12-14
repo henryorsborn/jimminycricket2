@@ -1,0 +1,14 @@
+version: 0.0
+os: linux 
+files:
+  - source: .
+    destination: /srv/jimminycricket
+hooks:
+  AfterInstall:
+    - location: scripts/setup_application.sh
+      timeout: 300
+      runas: gunicorn
+  ApplicationStart:
+    - location: scripts/application_start.sh
+      timeout: 300
+      runas: gunicorn
