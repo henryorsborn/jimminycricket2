@@ -20,4 +20,4 @@ sudo systemctl enable jimminycricket
 sudo service jimminycricket start
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
 sudo certbot --apache -d hwors-jimminycricket-stg.com -d www.hwors-jimminycricket-stg.com
-sudo crontable -e 0 4 * * 1 /usr/bin/certbot --renew && /usr/sbin/service apache2 reload
+sudo crontab -e -e 0 4 * * 1 /usr/bin/certbot --renew && /usr/sbin/service apache2 reload
