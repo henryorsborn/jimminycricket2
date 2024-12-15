@@ -8,7 +8,7 @@ app = Flask("JimminyCricket")
 dbuser = os.environ.get('DB_USER')
 dbhost = os.environ.get('DB_HOST')
 dbname = os.environ.get('DB_NAME')
-dbport = os.environ.get('DB_PORT')
+dbport = int(os.environ.get('DB_PORT'))
 region = os.environ.get('REGION')
 
 engine = sqlalchemy.create_engine("mysql:///")
@@ -20,7 +20,7 @@ def provide_token(dialect, conn_rec, cargs, cparams):
     token = client.generate_db_auth_token(DBHostname=dbhost, Port=dbport, DBUsername=dbuser, Region=region)
     # set up db connection parameters, alternatively we can get these from boto3 describe_db_instances
     cparams['host'] = dbhost
-    cparams['port'] = int(dbport)
+    cparams['port'] = dbport
     cparams['user'] = dbuser
     cparams['password'] = token
     cparams['database'] = dbname
