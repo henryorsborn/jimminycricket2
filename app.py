@@ -20,7 +20,7 @@ def provide_token(dialect, conn_rec, cargs, cparams):
     token = client.generate_db_auth_token(DBHostname=dbhost, Port=dbport, DBUsername=dbuser, Region=region)
     # set up db connection parameters, alternatively we can get these from boto3 describe_db_instances
     cparams['host'] = dbhost
-    cparams['port'] = dbport
+    cparams['port'] = int(dbport)
     cparams['user'] = dbuser
     cparams['token'] = token
     cparams['database'] = dbname
