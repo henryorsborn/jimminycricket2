@@ -5,7 +5,7 @@ import sqlalchemy
 
 app = Flask("JimminyCricket")
 
-session = boto3.Session(profile_name='default')
+session = boto3.Session()
 client = session.client('rds')
 
 dbuser = os.environ.get('DB_USER')
