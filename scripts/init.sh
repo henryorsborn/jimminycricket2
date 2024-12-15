@@ -2,6 +2,7 @@
 sudo apt update
 sudo apt clean
 sudo apt install python3.12-venv python3-pip apache2
+sudo apt-get install python3-dev libmysqlclient-dev
 cd /srv/jimminycricket2/
 python3 -m venv venv
 source venv/bin/activate
