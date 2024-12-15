@@ -18,6 +18,10 @@ engine = sqlalchemy.create_engine("mysql:///")
 def provide_token(dialect, conn_rec, cargs, cparams):
     client = boto3.client("rds", region_name=region)
     token = client.generate_db_auth_token(DBHostname=dbhost, Port=dbport, DBUsername=dbuser, Region=region)
+
+    if token is None or token == "":
+        raise Exception("TOKEN IS NONE")
+
     # set up db connection parameters, alternatively we can get these from boto3 describe_db_instances
     cparams['host'] = dbhost
     cparams['port'] = dbport
