@@ -5,14 +5,14 @@ import sqlalchemy
 
 app = Flask("JimminyCricket")
 
-session = boto3.Session()
-client = session.client('rds')
-
 dbuser = os.environ.get('DB_USER')
 dbhost = os.environ.get('DB_HOST')
 dbname = os.environ.get('DB_NAME')
 dbport = os.environ.get('DB_PORT')
 region = os.environ.get('REGION')
+
+session = boto3.Session(region_name=region)
+client = session.client('rds')
 
 engine = sqlalchemy.create_engine(f"mysql://{dbuser}@{dbhost}/{dbname}")
 db = engine.connect()
