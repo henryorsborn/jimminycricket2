@@ -2,7 +2,7 @@ version: 0.0
 os: linux 
 files:
   - source: .
-    destination: /srv/jimminycricket
+    destination: /srv/jimminycricket2
 hooks:
   AfterInstall:
     - location: scripts/setup_application.sh
