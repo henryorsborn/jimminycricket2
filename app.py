@@ -8,7 +8,7 @@ db = engine.connect()
 
 @app.route("/")
 def health():
-    return f"TableNames: {engine.table_names()}"
+    return f"TableNames: {db.execute('SHOW TABLES').fetchall()}"
 
 if __name__ == "__main__":
     app.run()
