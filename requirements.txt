@@ -2,6 +2,7 @@ gunicorn==23.0.0
 sqlalchemy==2.0.36
 Flask==3.0.3
 apscheduler==3.10.4
+boto3==1.35.81
 pymysql==1.1.1
 mysql-connector==2.2.9
 mysqlclient==2.1.1
