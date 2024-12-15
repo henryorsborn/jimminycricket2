@@ -3,7 +3,7 @@ Description=JimminyCricket App Server
 After=network.target
 
 [Service]
-ExecStartPre=/srv/jimminycricket2/scripts/env.sh
+EnvironmentFile=/srv/jimminycricket2/.env
 ExecStart=/srv/jimminycricket2/venv/bin/gunicorn app:app -w 4 -b 127.0.0.1:8000
 WorkingDirectory=/srv/jimminycricket2/
 Restart=on-failure
