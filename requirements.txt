@@ -4,3 +4,4 @@ Flask==3.0.3
 apscheduler==3.10.4
 pymysql==1.1.1
 mysql-connector==2.2.9
+mysqlclient
