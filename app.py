@@ -12,7 +12,7 @@ dbport = os.environ.get('DB_PORT')
 region = os.environ.get('REGION')
 
 session = boto3.Session(region_name=region)
-client = session.client('rds')
+client = session.client('rds', region_name=region)
 
 engine = sqlalchemy.create_engine(f"mysql://{dbuser}@{dbhost}/{dbname}")
 db = engine.connect()
