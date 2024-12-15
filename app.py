@@ -5,9 +5,9 @@ import sqlalchemy
 
 app = Flask("JimminyCricket")
 
-dbuser = os.environ.get('DB_USER')
-dbhost = os.environ.get('DB_HOST')
-dbname = os.environ.get('DB_NAME')
+dbuser = os.environ.get('DB_USER').strip()
+dbhost = os.environ.get('DB_HOST').strip()
+dbname = os.environ.get('DB_NAME').strip()
 dbport = int(os.environ.get('DB_PORT'))
 region = os.environ.get('REGION')
 
