@@ -11,7 +11,7 @@ dbname = os.environ.get('DB_NAME')
 dbport = os.environ.get('DB_PORT')
 region = os.environ.get('REGION')
 
-engine = sqlalchemy.create_engine(f"mysql://")
+engine = sqlalchemy.create_engine("mysql:///")
 db = engine.connect()
 
 
