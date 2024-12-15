@@ -22,7 +22,7 @@ def provide_token(dialect, conn_rec, cargs, cparams):
     cparams['host'] = dbhost
     cparams['port'] = int(dbport)
     cparams['user'] = dbuser
-    cparams['token'] = token
+    cparams['password'] = token
     cparams['database'] = dbname
 
 
